@@ -1,0 +1,7 @@
+# .gitignore
+.env
+staticfiles/
+__pycache__/
+*.pyc
+db.pgsql
+db.sqlite3
