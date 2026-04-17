@@ -29,9 +29,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get ('SECRET_KEY' , "b-70h9*cl87&p6qbnb7dj^v^jyr5^f#atu0ndxg0omu284r94j")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ .get ('DEBUG' , 'False') 
+DEBUG = False
 
-ALLOWED_HOSTS = os .environ.get ('ALLOWED_HOSTS' , 'localhost , 127.0.0.1').split (',')
+ALLOWED_HOSTS = ['.onrender.com']
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # le reste…
+]
 
 
 # Application definition
